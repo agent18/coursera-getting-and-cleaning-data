@@ -92,7 +92,7 @@ ones found in `AverageVariable` column of the tidy dataset
 **For example:**  tBodyAcc-XYZ becomes the following 6 variables
 
 ``` R
-[1] tBodyAccMeanX                          
+ [1] tBodyAccMeanX                          
  [2] tBodyAccMeanY                          
  [3] tBodyAccMeanZ                          
  [4] tBodyAccSTDX                           
