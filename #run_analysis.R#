@@ -108,6 +108,7 @@ traintest.order <- arrange(traintest,Subject,Activity)
 dim(traintest.order)
 #head(traintest.order[,c("Subject","Activity")], n=50)
 
+## Making new data set that averages the values per subject and per activity.
 traintest.new <-
     aggregate(traintest.order[,3:88],by=list(traintest.order$Subject,traintest.order$Activity),
               mean)

@@ -17,7 +17,7 @@ Data Science Specialization
   
 - Running run_analysis.R in RStudsio/R does the following:
 
-	0. Extracts the data from the respective folder
+	> 0. Extracts the data from the respective folder
     > 1. Merges the training and the test sets to create one data set.
     > 2. Extracts only the measurements on the mean and standard deviation for each measurement.
     > 3. Uses descriptive activity names to name the activities in the data set

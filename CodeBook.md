@@ -1,5 +1,9 @@
 ## Introduction 
 
+**Note:** The Codebook thus describes the variables, the data and any
+transformations or work that has been perfromed to clean up the data
+as per the assignment specifications.
+
 The data in
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 (referred to as ZIPDATA), is studied and presented as per the
@@ -33,7 +37,8 @@ The data looks as follows:
 - AverageVariable: Several parameters are extracted from the recorded
   data. What the parameters mean is dealt with in the following sub-section  
   
-- Value: The value of the AverageVariable denoted. The value ranges
+- Value: The value of the `AverageVariable` denoted for a given
+  `Subject` and given `Activity`. The value ranges
   from [-1,1] as they are normalized. As a result they have no units.
   
 ## AverageValue
@@ -126,4 +131,43 @@ The complete list of variables of each feature vector is available in 'AverageVa
 The code `run-analysis.R` contains the code with explanation of the
 transformations done. The transformations done can be split into 5
 steps as per the assignment.
+
+0. Extracted the data from the respective folder
+
+	Extracted the data from train and test folders and make them into
+`train` and `test` dataset respectively. Extracted headers separately
+and then adds to the above datasets.
+
+1. Merged the training and the test sets to create one data set.
+
+	rbind is used to merge `train` and `test`, to form `traintest`.
+
+
+2. Extracted only the measurements on the mean and standard deviation
+   for each measurement.
+   
+   Using `grep` the locations of the mean and std measurements are
+   located and the `traintest` is updated accordingly.
+   
+3. Used descriptive activity names to name the activities in the data
+   set
+   
+   Activity names are made descriptive. Example: `1` becomes `WALKING`
+   
+4. Appropriately labeled the data set with descriptive variable names.
+
+	The goal here is to clean up the colnames with descriptive easily
+    accessible names. So that is done using gsub to have uniform names
+    with capitalization where expected and no hyphens and brackets in
+    confusing places. Look at `run_analysis.R` for more info.
+	
+5. From the data set in step 4, created a second, independent tidy
+    data set with the average of each variable for each activity and
+    each subject.
+
+	Here the dataset is made long and tidy (as per the advice of
+    http://vita.had.co.nz/papers/tidy-data.pdf), by melting the
+    dataset in step 4, except for `Subject` and `Activity`.
+	
+	
 
