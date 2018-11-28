@@ -32,7 +32,7 @@ make it tidier based on discussion in
 [http://vita.had.co.nz/papers/tidy-data.pdf](http://vita.had.co.nz/papers/tidy-data.pdf). The dataset is called
 `traintest.melt`. It looks like the following:
 
-  ``` R
+```R
   Subject           Activity Average of variable     value
 1       1             LAYING       tBodyAccMeanX 0.2215982
 2       1            SITTING       tBodyAccMeanX 0.2612376
@@ -40,7 +40,7 @@ make it tidier based on discussion in
 4       1            WALKING       tBodyAccMeanX 0.2773308
 5       1 WALKING_DOWNSTAIRS       tBodyAccMeanX 0.2891883
 6       1   WALKING_UPSTAIRS       tBodyAccMeanX 0.2554617
-  ```
+```
 
 
 ## File list
