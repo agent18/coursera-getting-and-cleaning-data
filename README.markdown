@@ -30,15 +30,30 @@ Data Science Specialization
 - As part of STEP 5, the data set obtained is Melted (made long) to
 make it tidier based on discussion in
 [http://vita.had.co.nz/papers/tidy-data.pdf](http://vita.had.co.nz/papers/tidy-data.pdf). The dataset is called
-`traintest.melt`.
+`traintest.melt`. It looks like the following:
+
+  ``` R
+  Subject           Activity Average of variable     value
+1       1             LAYING       tBodyAccMeanX 0.2215982
+2       1            SITTING       tBodyAccMeanX 0.2612376
+3       1           STANDING       tBodyAccMeanX 0.2789176
+4       1            WALKING       tBodyAccMeanX 0.2773308
+5       1 WALKING_DOWNSTAIRS       tBodyAccMeanX 0.2891883
+6       1   WALKING_UPSTAIRS       tBodyAccMeanX 0.2554617
+  ```
+
 
 ## File list
-- run_analysis.R : The file that does the analysis
+- run_analysis.R : The file that does the analysis and provides the
+  tidy long data set `traintest.melt`.
+  
+  
 - README.markdown: The file that contains the readme of this
   repository
 - CodeBook.md :  It is a code book that describes the variables, the
   data, and any transformations or work that was performed to clean up
   the data 
+- traintest-tidy.txt : File that contains 
   
 **Note: The data is not provided here as the files are very large, it
 must be downloaded from the link in the above section**
