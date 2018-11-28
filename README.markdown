@@ -17,6 +17,7 @@ Data Science Specialization
   
 - Running run_analysis.R in RStudsio/R does the following:
 
+	0. Extracts the data from the respective folder
     > 1. Merges the training and the test sets to create one data set.
     > 2. Extracts only the measurements on the mean and standard deviation for each measurement.
     > 3. Uses descriptive activity names to name the activities in the data set
@@ -57,9 +58,11 @@ make it tidier based on discussion in
   dataset written by using the following command,
   
 		write.table(traintest.melt,"./traintest-tidy.txt",row.names=FALSE)
-  
-**Note: The data is not provided here as the files are very large, it
-must be downloaded from the link in the above section**
+- AverageVariable.txt: File containing the unique parameters of the
+tidy `traintest.melt$AverageValue`
+
+**Note: The data in the zip is not provided here as the files are very
+large, it must be downloaded from the link in the above section**
 
 ## Appendix Info about the DATA:
 

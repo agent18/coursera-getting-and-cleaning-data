@@ -1,0 +1,86 @@
+ [1] tBodyAccMeanX                          
+ [2] tBodyAccMeanY                          
+ [3] tBodyAccMeanZ                          
+ [4] tBodyAccSTDX                           
+ [5] tBodyAccSTDY                           
+ [6] tBodyAccSTDZ                           
+ [7] tGravityAccMeanX                       
+ [8] tGravityAccMeanY                       
+ [9] tGravityAccMeanZ                       
+[10] tGravityAccSTDX                        
+[11] tGravityAccSTDY                        
+[12] tGravityAccSTDZ                        
+[13] tBodyAccJerkMeanX                      
+[14] tBodyAccJerkMeanY                      
+[15] tBodyAccJerkMeanZ                      
+[16] tBodyAccJerkSTDX                       
+[17] tBodyAccJerkSTDY                       
+[18] tBodyAccJerkSTDZ                       
+[19] tBodyGyroMeanX                         
+[20] tBodyGyroMeanY                         
+[21] tBodyGyroMeanZ                         
+[22] tBodyGyroSTDX                          
+[23] tBodyGyroSTDY                          
+[24] tBodyGyroSTDZ                          
+[25] tBodyGyroJerkMeanX                     
+[26] tBodyGyroJerkMeanY                     
+[27] tBodyGyroJerkMeanZ                     
+[28] tBodyGyroJerkSTDX                      
+[29] tBodyGyroJerkSTDY                      
+[30] tBodyGyroJerkSTDZ                      
+[31] tBodyAccMagMean                        
+[32] tBodyAccMagSTD                         
+[33] tGravityAccMagMean                     
+[34] tGravityAccMagSTD                      
+[35] tBodyAccJerkMagMean                    
+[36] tBodyAccJerkMagSTD                     
+[37] tBodyGyroMagMean                       
+[38] tBodyGyroMagSTD                        
+[39] tBodyGyroJerkMagMean                   
+[40] tBodyGyroJerkMagSTD                    
+[41] fBodyAccMeanX                          
+[42] fBodyAccMeanY                          
+[43] fBodyAccMeanZ                          
+[44] fBodyAccSTDX                           
+[45] fBodyAccSTDY                           
+[46] fBodyAccSTDZ                           
+[47] fBodyAccMeanFreqX                      
+[48] fBodyAccMeanFreqY                      
+[49] fBodyAccMeanFreqZ                      
+[50] fBodyAccJerkMeanX                      
+[51] fBodyAccJerkMeanY                      
+[52] fBodyAccJerkMeanZ                      
+[53] fBodyAccJerkSTDX                       
+[54] fBodyAccJerkSTDY                       
+[55] fBodyAccJerkSTDZ                       
+[56] fBodyAccJerkMeanFreqX                  
+[57] fBodyAccJerkMeanFreqY                  
+[58] fBodyAccJerkMeanFreqZ                  
+[59] fBodyGyroMeanX                         
+[60] fBodyGyroMeanY                         
+[61] fBodyGyroMeanZ                         
+[62] fBodyGyroSTDX                          
+[63] fBodyGyroSTDY                          
+[64] fBodyGyroSTDZ                          
+[65] fBodyGyroMeanFreqX                     
+[66] fBodyGyroMeanFreqY                     
+[67] fBodyGyroMeanFreqZ                     
+[68] fBodyAccMagMean                        
+[69] fBodyAccMagSTD                         
+[70] fBodyAccMagMeanFreq                    
+[71] fBodyBodyAccJerkMagMean                
+[72] fBodyBodyAccJerkMagSTD                 
+[73] fBodyBodyAccJerkMagMeanFreq            
+[74] fBodyBodyGyroMagMean                   
+[75] fBodyBodyGyroMagSTD                    
+[76] fBodyBodyGyroMagMeanFreq               
+[77] fBodyBodyGyroJerkMagMean               
+[78] fBodyBodyGyroJerkMagSTD                
+[79] fBodyBodyGyroJerkMagMeanFreq           
+[80] AngleBettBodyAccMeanAndGravity         
+[81] AngleBettBodyAccJerkMeanAndGravityMean 
+[82] AngleBettBodyGyroMeanAndGravityMean    
+[83] AngleBettBodyGyroJerkMeanAndGravityMean
+[84] AngleBetXAndGravityMean                
+[85] AngleBetYAndGravityMean                
+[86] AngleBetZAndGravityMean 
