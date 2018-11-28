@@ -15,7 +15,7 @@ Data Science Specialization
   
   link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
   
-- Running run_analysis.R in RStudsio/R to does the following:
+- Running run_analysis.R in RStudsio/R does the following:
 
     > 1. Merges the training and the test sets to create one data set.
     > 2. Extracts only the measurements on the mean and standard deviation for each measurement.
@@ -25,8 +25,13 @@ Data Science Specialization
     >    data set with the average of each variable for each activity and
     >    each subject.
 	
-	>--- Assignment
-	
+	> --- From the assignment
+
+- As part of STEP 5, the data set obtained is Melted (made long) to
+make it tidier based on discussion in
+[http://vita.had.co.nz/papers/tidy-data.pdf](http://vita.had.co.nz/papers/tidy-data.pdf). The dataset is called
+`traintest.melt`.
+
 ## File list
 - run_analysis.R : The file that does the analysis
 - README.markdown: The file that contains the readme of this
@@ -38,7 +43,7 @@ Data Science Specialization
 **Note: The data is not provided here as the files are very large, it
 must be downloaded from the link in the above section**
 
-## Appendix DATA:
+## Appendix Info about the DATA:
 
 > One of the most exciting areas in all of data science right now is
 > wearable computing - see for example this article . Companies like
@@ -54,3 +59,4 @@ must be downloaded from the link in the above section**
 >
 > https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
+> --- From the assignment
