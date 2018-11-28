@@ -33,13 +33,13 @@ make it tidier based on discussion in
 `traintest.melt`. It looks like the following:
 
 ```R
-  Subject           Activity Average of variable     value
-1       1             LAYING       tBodyAccMeanX 0.2215982
-2       1            SITTING       tBodyAccMeanX 0.2612376
-3       1           STANDING       tBodyAccMeanX 0.2789176
-4       1            WALKING       tBodyAccMeanX 0.2773308
-5       1 WALKING_DOWNSTAIRS       tBodyAccMeanX 0.2891883
-6       1   WALKING_UPSTAIRS       tBodyAccMeanX 0.2554617
+  Subject           Activity AverageVariable     Value
+1       1             LAYING   tBodyAccMeanX 0.2215982
+2       1            SITTING   tBodyAccMeanX 0.2612376
+3       1           STANDING   tBodyAccMeanX 0.2789176
+4       1            WALKING   tBodyAccMeanX 0.2773308
+5       1 WALKING_DOWNSTAIRS   tBodyAccMeanX 0.2891883
+6       1   WALKING_UPSTAIRS   tBodyAccMeanX 0.2554617
 ```
 
 
@@ -52,8 +52,11 @@ make it tidier based on discussion in
   repository
 - CodeBook.md :  It is a code book that describes the variables, the
   data, and any transformations or work that was performed to clean up
-  the data 
-- traintest-tidy.txt : File that contains 
+  the data. 
+- traintest-tidy.txt : File that contains text data of the tidy
+  dataset written by using the following command,
+  
+		write.table(traintest.melt,"./traintest-tidy.txt",row.names=FALSE)
   
 **Note: The data is not provided here as the files are very large, it
 must be downloaded from the link in the above section**
@@ -75,3 +78,7 @@ must be downloaded from the link in the above section**
 > https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 > --- From the assignment
+
+The data contains a README.txt which explains how the data is
+obtained. But for the sake of clarity the CODEBOOK tries to be
+complete by including it as well.

@@ -132,7 +132,8 @@ library(reshape2)
 traintest.melt <-
     melt(traintest.new,id=c("Subject","Activity"),measure.vars=colnames(traintest.new)[3:88])
 
-colnames(traintest.melt)[3] <- "Average of variable"
+colnames(traintest.melt)[3] <- "AverageVariable"
+colnames(traintest.melt)[4] <- "Value"
 
 ## final checks
 dim(traintest.melt) # Dimension due to melting should be
@@ -140,5 +141,7 @@ dim(traintest.melt) # Dimension due to melting should be
 
 sum(is.na(traintest.melt))
 
+## write table
 
+write.table(traintest.melt,"./traintest-tidy.txt",row.names=FALSE)
 
