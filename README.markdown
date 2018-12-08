@@ -26,21 +26,31 @@ Data Science Specialization
     >    data set with the average of each variable for each activity and
     >    each subject.
 	
+	
 	> --- From the assignment
 
 - As part of STEP 5, the data set obtained is Melted (made long) to
 make it tidier based on discussion in
-[http://vita.had.co.nz/papers/tidy-data.pdf](http://vita.had.co.nz/papers/tidy-data.pdf). The dataset is called
+[http://vita.had.co.nz/papers/tidy-data.pdf](http://vita.had.co.nz/papers/tidy-data.pdf). The Data set is
+further split into columns to make sure there is only one variable in
+one column. The dataset is called
 `traintest.melt`. It looks like the following:
 
 ```R
-  Subject           Activity AverageVariable     Value
-1       1             LAYING   tBodyAccMeanX 0.2215982
-2       1            SITTING   tBodyAccMeanX 0.2612376
-3       1           STANDING   tBodyAccMeanX 0.2789176
-4       1            WALKING   tBodyAccMeanX 0.2773308
-5       1 WALKING_DOWNSTAIRS   tBodyAccMeanX 0.2891883
-6       1   WALKING_UPSTAIRS   tBodyAccMeanX 0.2554617
+  Subject           Activity     Value Domain     VariableType  Jerk MeanOrSTD
+1       1             LAYING 0.2215982   Time BodyAccelaration FALSE      Mean
+2       1            SITTING 0.2612376   Time BodyAccelaration FALSE      Mean
+3       1           STANDING 0.2789176   Time BodyAccelaration FALSE      Mean
+4       1            WALKING 0.2773308   Time BodyAccelaration FALSE      Mean
+5       1 WALKING_DOWNSTAIRS 0.2891883   Time BodyAccelaration FALSE      Mean
+6       1   WALKING_UPSTAIRS 0.2554617   Time BodyAccelaration FALSE      Mean
+  Direction AngleA AngleB
+1         X   <NA>   <NA>
+2         X   <NA>   <NA>
+3         X   <NA>   <NA>
+4         X   <NA>   <NA>
+5         X   <NA>   <NA>
+6         X   <NA>   <NA>
 ```
 
 

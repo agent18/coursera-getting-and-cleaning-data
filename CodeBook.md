@@ -41,7 +41,7 @@ The data looks as follows:
   `Subject` and given `Activity`. The value ranges
   from [-1,1] as they are normalized. As a result they have no units.
   
-## AverageValue
+## AverageVariable
 
 ### Signals used to obtain the parameters in AverageValue
 

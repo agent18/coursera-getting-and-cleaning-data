@@ -1,3 +1,4 @@
+rm(list=ls())
 ##----------- 0. Loading the required data------------------------##
 ##-------------------------Headers---------------------##
 ## Extracting headers
@@ -71,7 +72,6 @@ activity.names$V2 <- as.character(activity.names$V2)
 library(plyr)
 traintest$Activity <-
     mapvalues(traintest$Activity,activity.names$V1,activity.names$V2)# requires `plyr`
-
 ## 4. Appropriately label the data set with descriptive variable
 ## names.
 
@@ -108,6 +108,7 @@ traintest.order <- arrange(traintest,Subject,Activity)
 dim(traintest.order)
 #head(traintest.order[,c("Subject","Activity")], n=50)
 
+## Making new data set that averages the values per subject and per activity.
 traintest.new <-
     aggregate(traintest.order[,3:88],by=list(traintest.order$Subject,traintest.order$Activity),
               mean)
@@ -135,6 +136,59 @@ dim(traintest.melt) # Dimension due to melting should be
 
 sum(is.na(traintest.melt))
 
+## Splitting column to make **more tidy**
+
+traintest.melt$Domain <- NA
+traintest.melt$VariableType <- NA
+traintest.melt$Jerk <- NA
+traintest.melt$MeanOrSTD <- NA
+traintest.melt$Direction <- NA
+traintest.melt$AngleA <- NA
+traintest.melt$AngleB <- NA
+
+### Domain
+traintest.melt$Domain[grep("^t",traintest.melt$AverageVariable)] <- "Time"
+traintest.melt$Domain[grep("^f",traintest.melt$AverageVariable)] <-
+    "Frequency"
+traintest.melt$Domain[grep("^Angle",traintest.melt$AverageVariable)] <- "Angle"
+
+### Type of Variable: Body Accelaration or Gravity Accelaration or
+### Body Angular velocity i.e., Body Gyro
+traintest.melt$VariableType[grep("^[tf](.*)BodyAcc",traintest.melt$AverageVariable)]<- "BodyAccelaration"                 
+traintest.melt$VariableType[grep("^[tf](.*)GravityAcc",traintest.melt$AverageVariable)] <-"GravityAccelaration"
+traintest.melt$VariableType[grep("^[tf](.*)BodyGyro",traintest.melt$AverageVariable)]<-"BodyGyro"
+
+### Jerk Mag Mean Std
+
+traintest.melt$Jerk <- grepl("^[tf](.*)Jerk",traintest.melt$AverageVariable)
+traintest.melt$Direction[grep("^[tf](.*)Mag",traintest.melt$AverageVariable)]<-"Mag"
+traintest.melt$MeanOrSTD[grep("^[tf](.*)Mean",traintest.melt$AverageVariable)]<-"Mean"
+traintest.melt$MeanOrSTD[grep("^[tf](.*)STD",traintest.melt$AverageVariable)]<-"StandardDeviation"
+traintest.melt$MeanOrSTD[grep("^[tf](.*)MeanFreq",traintest.melt$AverageVariable)]<-"MeanFrequency"
+
+traintest.melt$Direction[grep("[tf](.*)X$",traintest.melt$AverageVariable)]<- "X"
+traintest.melt$Direction[grep("[tf](.*)Y$",traintest.melt$AverageVariable)]<- "Y"
+traintest.melt$Direction[grep("[tf](.*)Z$",traintest.melt$AverageVariable)]<- "Z"
+
+
+
+### Fixing the angle variables
+
+ind <-grep("^AngleBet(.*)",traintest.melt$AverageVariable)
+traintest.melt$AverageVariable <- as.character(traintest.melt$AverageVariable)
+jesus <- lapply(traintest.melt$AverageVariable[ind], function(x)
+    strsplit(x,split="Bet")[[1]][[2]])
+
+traintest.melt$AngleA[ind] <- sapply(jesus, function(x) strsplit(x,split="And")[[1]][[1]])
+traintest.melt$AngleB[ind]<- sapply(jesus, function(x)
+    strsplit(x,split="And")[[1]][[2]])
+
+### As factor
+cols <- c("Domain","VariableType","Jerk","MeanOrSTD","Direction","AngleA","AngleB")
+traintest.melt[cols] <- lapply(traintest.melt[cols],factor)
+
+### Remove AverageVariable
+traintest.melt <- within(traintest.melt, rm(AverageVariable))
 ## write table
 
 write.table(traintest.melt,"./traintest-tidy.txt",row.names=FALSE)
