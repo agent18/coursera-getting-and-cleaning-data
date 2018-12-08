@@ -13,16 +13,24 @@ assignement given to ultimately come be a tidy dataset
 The data looks as follows:
 
 ```R
-  Subject           Activity AverageVariable     Value
-1       1             LAYING   tBodyAccMeanX 0.2215982
-2       1            SITTING   tBodyAccMeanX 0.2612376
-3       1           STANDING   tBodyAccMeanX 0.2789176
-4       1            WALKING   tBodyAccMeanX 0.2773308
-5       1 WALKING_DOWNSTAIRS   tBodyAccMeanX 0.2891883
-6       1   WALKING_UPSTAIRS   tBodyAccMeanX 0.2554617
+      Subject         Activity       Value    Domain        VariableType  Jerk
+11404      11          WALKING -0.49855464 Frequency            BodyGyro FALSE
+1378       20          WALKING -0.34444391      Time GravityAccelaration FALSE
+12351      19         STANDING -0.96425911 Frequency    BodyAccelaration FALSE
+4662       27 WALKING_UPSTAIRS -0.05092352      Time            BodyGyro  TRUE
+15380      14          SITTING  0.08921496     Angle                <NA> FALSE
+4885        5           LAYING -0.98342226      Time            BodyGyro  TRUE
+              MeanOrSTD Direction AngleA      AngleB
+11404 StandardDeviation         Z   <NA>        <NA>
+1378               Mean         Y   <NA>        <NA>
+12351 StandardDeviation       Mag   <NA>        <NA>
+4662               Mean         Y   <NA>        <NA>
+15380              <NA>      <NA>      Z GravityMean
+4885  StandardDeviation         X   <NA>        <NA>
 ```
 
-- There are 4 variables, Subject, Activity, AverageVariable and Value
+- There are 9 variables, Subject, Activity, AverageVariable and
+  Value. This data set is tidy as it has one variable in one column.
 
 ## Meaning of Variables
 
