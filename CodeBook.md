@@ -41,15 +41,41 @@ The data looks as follows:
   which some data is recorded. They
   are: LAYING, SITTING, STANDING, WALKING, WALKING\_DOWNSTAIRS and
   WALKING\_UPSTAIRS.
-  
-- AverageVariable: Several parameters are extracted from the recorded
-  data. What the parameters mean is dealt with in the following sub-section  
-  
-- Value: The value of the `AverageVariable` denoted for a given
+ 
+- Value: The average value of the `Variables` denoted for a given
   `Subject` and given `Activity`. The value ranges
   from [-1,1] as they are normalized. As a result they have no units.
   
+- Domain: Informs if the domain is in `Frequency`, `Time`, or `Angle`
+- VariableType: Informs the type of variable. 
+  - `BodyGyro` refers to Body angular velocity
+  - `BodyAccelaration` refers to the Body Acceleration
+  - `GravityAccelaration` refers to the Gravity Acceleration variable
+  
+- Jerk: It is the derived form of the Variable Type. 
+  - `True` implies the value is derived with time
+  - `False` implies the value is not derived with time
+  
+- MeanOrSTD: Informs if the the `value` of the `variabletype` is `mean` or
+  `Standard deviation` or `mean frequency`.
+  
+- Direction: X, Y, Z or Magnitude of the value
+
+- AngleA and AngleB: The angle mentioned in `VariableType` and the `value` given is
+  between `AngleA` and `AngleB`.
+
 ## AverageVariable
+
+This variable is currently removed from the dataframe. This is because
+using this variable I have split it and made the data frame tidy. This
+variable is nothing but the variables given in `feature-info.txt`
+describing the variables and information recorded during the
+experiment.
+
+If this line is uncommented in `run_analysis.R` you will find that
+column.
+
+	traintest.melt <- within(traintest.melt, rm(AverageVariable))
 
 ### Signals used to obtain the parameters in AverageValue
 
@@ -177,5 +203,5 @@ and then adds to the above datasets.
     http://vita.had.co.nz/papers/tidy-data.pdf), by melting the
     dataset in step 4, except for `Subject` and `Activity`.
 	
-	
-
+	Step 5 has been documented in the code to explain how each
+    variable is extracted from Average Variable.
