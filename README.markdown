@@ -37,20 +37,20 @@ one column. The dataset is called
 `traintest.melt`. It looks like the following:
 
 ```R
-  Subject           Activity     Value Domain     VariableType  Jerk MeanOrSTD
-1       1             LAYING 0.2215982   Time BodyAccelaration FALSE      Mean
-2       1            SITTING 0.2612376   Time BodyAccelaration FALSE      Mean
-3       1           STANDING 0.2789176   Time BodyAccelaration FALSE      Mean
-4       1            WALKING 0.2773308   Time BodyAccelaration FALSE      Mean
-5       1 WALKING_DOWNSTAIRS 0.2891883   Time BodyAccelaration FALSE      Mean
-6       1   WALKING_UPSTAIRS 0.2554617   Time BodyAccelaration FALSE      Mean
-  Direction AngleA AngleB
-1         X   <NA>   <NA>
-2         X   <NA>   <NA>
-3         X   <NA>   <NA>
-4         X   <NA>   <NA>
-5         X   <NA>   <NA>
-6         X   <NA>   <NA>
+      Subject         Activity       Value    Domain        VariableType  Jerk
+11404      11          WALKING -0.49855464 Frequency            BodyGyro FALSE
+1378       20          WALKING -0.34444391      Time GravityAccelaration FALSE
+12351      19         STANDING -0.96425911 Frequency    BodyAccelaration FALSE
+4662       27 WALKING_UPSTAIRS -0.05092352      Time            BodyGyro  TRUE
+15380      14          SITTING  0.08921496     Angle                <NA> FALSE
+4885        5           LAYING -0.98342226      Time            BodyGyro  TRUE
+              MeanOrSTD Direction AngleA      AngleB
+11404 StandardDeviation         Z   <NA>        <NA>
+1378               Mean         Y   <NA>        <NA>
+12351 StandardDeviation       Mag   <NA>        <NA>
+4662               Mean         Y   <NA>        <NA>
+15380              <NA>      <NA>      Z GravityMean
+4885  StandardDeviation         X   <NA>        <NA>
 ```
 
 
